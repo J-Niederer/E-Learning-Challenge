@@ -1,0 +1,121 @@
+\documentclass[parskip=off,index=totocnumbered]{scrreprt}
+\usepackage[utf8]{inputenc}
+
+\title{E-Learning-Challenge}
+\subtitle{Team Kepler: Asychrone Vorlesungsvideos und Chats}
+\author{Daniel Gonzalez, Julian Niederer, Charlotte Ochs, Janina\\Rastetter, Maren Raus, Jacob Relle und Natascha Sattler}
+\date{\today}
+
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[german]{csquotes}
+
+\usepackage{microtype, xcolor}
+
+\usepackage{array, booktabs, longtable}
+
+\usepackage{hyperref}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\chapter{Ziele}
+In diesem Projekt sollen Realisierungsmöglichkeiten einer Online-Vorlesung im fortgeschrittenen Studium der Mathematik und des Scientific Computing getestet und gegenüber gestellt werden. Ergänzend zu einem Skript sollen Erklärvideos durch Screenrecording aufgezeichnet werden. Die Aufnahmen sollen auf einem iPad Pro angefertigt werden. Folgende Fragen sollen beantwortet werden:
+\begin{enumerate}
+\item Welche Notizesoftware ist die am besten geeignet? Die Software soll...
+   \begin{itemize}
+      \item einfach und intuitiv zu bedienen sein
+      \item gute Visualisierungsmöglichkeiten bieten
+      \item eine übersichtliche Strukturierung erlauben
+      \item leicht verwaltbar sein
+      \item das Einblenden und Interagieren mit vorab erstellten Materialien erlauben (z.B. Skizzen)
+      \item präzises Springen gestatten
+      \item das Exportieren von pdf-Dateien unterstützen
+   \end{itemize}
+\item Ist es möglich, das Skript und die Notizsoftware nebeneinander zu öffnen, um die Inhalte des Skripts durch weitere Erklärungen und Skizzen in der Notizsoftware zu ergänzen? Lässt sich das sinnvoll realisieren?
+\item Wie zeichnet man am besten Ton auf? Mit internem oder externem Mikrofon?
+\item Welches Programm bietet sich zur Nachbereitung an? Was kann und sollte bei der Nachbereitung getan werden?
+\item Wie kann man Chats am besten realisieren? Welche Plattform kommt dafür infrage? Der Chat soll...
+   \begin{itemize}
+   \item asynchron sein, damit Studierede nach der Auseinandersetzung mit den Materialien sinnvolle Fragen formulieren können
+   \item allen Teilnehmer*innen zugänglich sein, dies soll sowohl auf Fragen als auch Antworten zutreffen
+   \item zeitlich flexibel bzgl. Zugang zu und Beantwortung der Fragen sein
+   \end{itemize}
+\item Was ist bei all dem zu beachten oder zu vermeiden?
+\end{enumerate}
+
+\chapter{MaMpf -- Ein Blick in die Praxis}
+Viele der aufgeworfenen Fragen haben sich schon bei der Entwicklung und Realisierung von \href{https://mampf.mathi.uni-heidelberg.de/}{MaMpf} -- der mathematischen Medienplattform -- und der dort verfügbaren Lernangebote gestellt. MaMpf ist eine vernetzte Hypermedia-Plattform, die am Mathematischen Institut der Universität Heidelberg betrieben und entwickelt wird. Als weit ausgereifte E-Learning-Plattform bietet MaMpf Videos, Quizzes und angeleitete Beweise, Möglichkeiten zur Vernetzung von Inhalten, Navigation über Mindmaps, einen Online-Clicker, eine Beispieldatenbank, Diskussionsforen sowie ein \LaTeX-Paket. Hier sollen die für dieses Projekt relevanten Erkenntnisse der Arbeit an MaMpf vorgestellt sowie Überlegungen angestellt werden, wie das Gewünschte mit MaMpf umgesetzt werden kann.
+
+\section{Kameralose Videoaufzeichnung}
+Für MaMpf werden sowohl Vorlesungs- als auch Beispiel- und Wiederholungsvideos produziert. Derzeit erfolgt die Videoaufzeichnung für MaMpf\footnote{Mehr dazu auf dem \href{https://mampf.blog/kameralose-videoaufzeichnung/}{MaMpf-Blog}.} auf \textbf{Surface Books} mit dem kostenlosen\textcolor{red}{?} Notizprogramm \textbf{Microsoft OneNote} und der Aufnahme- und Bearbeitungssoftware \textbf{\href{https://www.techsmith.de/camtasia.html}{Camtasia}}\footnote{Zur Verwendung von Camtasia für MaMpf siehe etwa diese leicht veraltete \href{https://github.com/hungrywords/MaMpf_Doc}{Dokumentation}.}. Zusätzlich wird eine \textbf{Gamingtastatur} zum schnellen, einfachen Wechseln zwischen Stiftfarben und -typen verwendet. Windows OneNote lässt sich auch auf dem iPad nutzen, Camtasia hingegen nicht.
+
+Für die Tonaufzeichnung hat sich die Verwendung eines \textbf{externen Mikrofons mit Nierencharakteristik} bewährt, da interne Mikrofone ebenso wie andere Mikrofone mit Kugelcharakteristik auch Störgeräusche, wie z.B. das Klackern des Stifts beim Schreiben, mit aufzeichnen. Damit das Mikrofon mit dem Tablet verbunden werden kann, sind ein \textbf{Adpater} (XLR auf USB) bzw. ein \textbf{Audiointerface} sowie entsprechende \textbf{Kabel} notwendig. Zudem empfiehlt sich ein Mikrofon mit Ohrbügeln, damit man die Hände bei der Aufnahme fürs Schreiben frei hat. Dazu können z.B. folgende Produkte verwendet werden:  
+
+\begin{itemize}
+   \item \href{https://www.thomann.de/de/shure_wh20xlr.htm}{Mikrofon Shure WH20}
+   \item \href{https://www.thomann.de/de/focusrite_scarlett_solo_3rd_gen.htm}{Audiointerface Focusrite Scarlett Solo}
+   \item \href{https://www.thomann.de/de/the_sssnake_sk23315_xlr_patch.htm}{XLR-Kabel}
+\end{itemize}
+
+Bei der Bildaufzeichnung haben sich folgende Einstellungen als sinnvoll erwiesen: 
+\begin{itemize}
+   \item Bildfrequenz von 20 Bildern pro Sekunde (geringere Rechenintensität und Videogröße)
+   \item Querformat
+   \item Horizontale Auflösung von 1080 Pixel für die Ausgabevideos
+   \item 3:2 Bildschirmverhältnis
+\end{itemize}
+
+\section{Foren}
+Für jede Veranstaltung auf MaMpf lässt sich ein Diskussionsforum einrichten. Abonnent*innen der Veranstaltung können in diesem Forum Diskussionen starten und Beiträge lesen und verfassen. Zudem sind diese Foren \LaTeX-tauglich, was für Diskussionen in den Bereichen Mathematik und Physik notwendig ist.
+
+Die gewünschten Diskussionsforen ließen sich über MaMpf realisieren. Zu jeder Vorlesung kann ein Thema im zur Vorlesung gehörigen Forum angelegt werden. Zu diesem Thema können dann alle Abonnent*innen Fragen stellen oder beantworten. Einfache Fragen können direkt im Forum beantwortet werden, umfangreiche Fragen können gesammelt und in eine Präsentation kopiert werden. Mithilfe dieser kann ein Antwortvideo gedreht werden. Dieses kann in MaMpf mit THymE mit einer Gliederung versehen werden, so dass Studierende nur die für sie relevanten Stellen auswählen können. Zudem können Links zu dem Video im Vorlesungsskript verlinkt werden.
+
+\section{MaMpf-Label-\LaTeX-Paket}
+
+
+
+\chapter{Notizsoftware}
+Kurze Übersicht über die Performance der Notizprogramme hinsichtlich der gewünschten Kriterien (\textcolor{red}{ja -- nein, Skala 1-10?}):
+\renewcommand*{\arraystretch}{1.2} 
+\begin{longtable}{>{\centering \arraybackslash}p{3.2cm}>{\centering \arraybackslash}p{2.2cm}>{\centering \arraybackslash}p{2.2cm}>{\centering \arraybackslash}p{2.2cm}>{\centering \arraybackslash}p{2.2cm}} \toprule
+& GoodNotes 5 & Notability & Noteshelf & OneNote \\  \midrule
+Bedienbarkeit & & & & \\
+Visualisierung & & & & \\
+Strukturierung & & & & \\
+Verwaltung & & & & \\
+Einbindung vorab Erstellten & & & & \\
+Springen & & & & \\
+pdf-Export & & & & \\ \bottomrule
+\end{longtable}
+
+\section{GoodNotes 5}
+\subsection{Test}
+\subsection{Vorteile}
+\subsection{Nachteile}
+
+\section{Notability}
+\subsection{Test}
+\subsection{Vorteile}
+\subsection{Nachteile}
+
+\section{Noteshelf}
+\subsection{Test}
+\subsection{Vorteile}
+\subsection{Nachteile}
+
+\section{OneNote}
+\subsection{Test}
+\subsection{Vorteile}
+\subsection{Nachteile}
+
+\chapter{Aufnahme}
+\section{Hardware: Externes Mikrofon und Adapter?}
+\section{Software}
+
+\chapter{Videobearbeitung}
+
+\chapter{Chat}
+
+\end{document}
